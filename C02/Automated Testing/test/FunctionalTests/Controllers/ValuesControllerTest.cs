@@ -1,11 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc.Testing;
 using MyApp;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net;
 using System.Net.Http;
-using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
 using Xunit;
@@ -26,7 +22,7 @@ namespace FunctionalTests.Controllers
             public Get(WebApplicationFactory<Startup> webApplicationFactory) : base(webApplicationFactory) { }
 
             [Fact]
-            public async Task Should_respond_a_status_200_OK()
+            public async Task ShouldRespondAStatus200OKAsync()
             {
                 // Act
                 var result = await _httpClient.GetAsync("/api/values");
@@ -36,7 +32,7 @@ namespace FunctionalTests.Controllers
             }
 
             [Fact]
-            public async Task Should_respond_the_expected_strings()
+            public async Task ShouldRespondTheExpectedStringsAsync()
             {
                 // Act
                 var result = await _httpClient.GetAsync("/api/values");

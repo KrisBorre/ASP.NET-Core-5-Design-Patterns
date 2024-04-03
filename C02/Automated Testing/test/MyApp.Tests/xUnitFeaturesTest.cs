@@ -1,14 +1,10 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Xunit;
 
 namespace MyApp
 {
-    public class xUnitFeaturesTest
+    public class XUnitFeaturesTest
     {
         public class FactTest
         {
