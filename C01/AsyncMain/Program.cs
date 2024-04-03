@@ -3,9 +3,9 @@ using System.Threading.Tasks;
 
 namespace AsyncMain
 {
-    class Program
+    internal class Program
     {
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             Console.WriteLine("Entering Main");
             var myService = new MyService();
