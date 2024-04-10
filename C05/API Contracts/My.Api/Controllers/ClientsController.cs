@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using Microsoft.AspNetCore.Mvc;
+using My.Api.Contracts;
 using My.Api.Models;
 using My.Api.Services;
-using Microsoft.AspNetCore.Mvc;
-using My.Api.Contracts;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace My.Api.Controllers
 {

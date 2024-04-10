@@ -8,29 +8,29 @@ namespace My.Client
 {
     public class Program
     {
-        private static readonly HttpClient http = new HttpClient();
+        private static readonly HttpClient _http = new HttpClient();
 
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             var uri = "https://localhost:5002/api/clients";
 
             // Read all summaries
             WriteTitle("All clients summaries");
-            var clients = await FetchAndWriteFormattedJson<ClientSummaryDto[]>(uri);
+            var clients = await FetchAndWriteFormattedJsonAsync<ClientSummaryDto[]>(uri);
 
             // Read all details
             foreach (var summary in clients)
             {
                 WriteTitle($"Details of {summary.Name} (id: {summary.Id})");
-                await FetchAndWriteFormattedJson<ClientDetailsDto>($"{uri}/{summary.Id}");
+                await FetchAndWriteFormattedJsonAsync<ClientDetailsDto>($"{uri}/{summary.Id}");
             }
 
             Console.ReadLine();
         }
 
-        private static async Task<TContract> FetchAndWriteFormattedJson<TContract>(string uri)
+        private static async Task<TContract> FetchAndWriteFormattedJsonAsync<TContract>(string uri)
         {
-            var response = await http.GetStringAsync(uri);
+            var response = await _http.GetStringAsync(uri);
             var deserializedObject = JsonSerializer.Deserialize<TContract>(response);
             var formattedJson = JsonSerializer.Serialize(deserializedObject, new JsonSerializerOptions { WriteIndented = true });
             Console.WriteLine(formattedJson);
