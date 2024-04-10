@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace NinjaOCP
+﻿namespace NinjaOpenClosedPrinciple
 {
     public interface IAttackable { }
 
@@ -13,7 +11,7 @@ namespace NinjaOCP
         {
             Name = name;
         }
-        
+
         public AttackResult Attack(IAttackable target)
         {
             return new AttackResult(EquippedWeapon, this, target);
@@ -24,7 +22,7 @@ namespace NinjaOCP
 
     public class Weapon
     {
-        public override string ToString() => this.GetType().Name;
+        public override string ToString() => GetType().Name;
     }
 
     public class Sword : Weapon { }
