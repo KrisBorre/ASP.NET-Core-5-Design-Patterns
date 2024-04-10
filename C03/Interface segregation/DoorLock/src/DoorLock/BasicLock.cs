@@ -225,7 +225,7 @@ namespace DoorLock
     public class ImpossibleToPickTheLockException : Exception
     {
         public ImpossibleToPickTheLockException(ILock @lock)
-            :base("Impossible to pick the lock.")
+            : base("Impossible to pick the lock.")
         {
             Lock = @lock ?? throw new ArgumentNullException(nameof(@lock));
         }

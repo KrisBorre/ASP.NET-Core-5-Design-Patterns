@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Xunit;
+﻿using Xunit;
 
 namespace DoorLock
 {
@@ -44,7 +39,7 @@ namespace DoorLock
             {
                 new BasicLock("key1", isLocked: true),
                 new MultiLock(
-                    new BasicLock("key2", isLocked: true), 
+                    new BasicLock("key2", isLocked: true),
                     new BasicLock("key3", isLocked: true)
                 ),
                 new MultiLock(
