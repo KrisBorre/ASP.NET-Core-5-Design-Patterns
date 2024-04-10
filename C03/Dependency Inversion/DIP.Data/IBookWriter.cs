@@ -1,4 +1,4 @@
-﻿namespace DIP.Data
+﻿namespace DependencyInversionPrinciple.Data
 {
     public interface IBookWriter
     {

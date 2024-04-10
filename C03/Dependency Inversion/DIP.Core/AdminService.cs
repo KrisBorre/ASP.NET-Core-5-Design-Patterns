@@ -1,8 +1,8 @@
-﻿using DIP.Data;
+﻿using DependencyInversionPrinciple.Data;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DIP.Core
+namespace DependencyInversionPrinciple.Core
 {
     public class AdminService
     {

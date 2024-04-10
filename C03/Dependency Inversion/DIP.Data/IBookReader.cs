@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DIP.Data
+namespace DependencyInversionPrinciple.Data
 {
     public interface IBookReader
     {

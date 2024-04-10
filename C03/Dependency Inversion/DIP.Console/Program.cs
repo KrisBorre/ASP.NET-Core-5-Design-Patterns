@@ -1,17 +1,15 @@
-﻿using DIP.Core;
-using DIP.Data;
-using DIP.Data.InMemory;
+﻿using DependencyInversionPrinciple.Core;
+using DependencyInversionPrinciple.Data.InMemory;
 using System;
-using System.Collections.Generic;
 using System.Threading.Tasks;
 
-namespace DIP.App
+namespace DependencyInversionPrinciple.App
 {
-    class Program
+    internal class Program
     {
-        private static BookPresenter presenter = new BookPresenter();
+        private static readonly BookPresenter _presenter = new BookPresenter();
 
-        static async Task Main(string[] args)
+        private static async Task Main(string[] args)
         {
             var isPublic = args?.Length == 0 || args[0] != "admin";
             Console.WriteLine($"isPublic: {isPublic}");
@@ -32,7 +30,7 @@ namespace DIP.App
             var books = await publicService.FindAllAsync();
             foreach (var book in books)
             {
-                presenter.Display(book);
+                _presenter.Display(book);
             }
         }
 
@@ -42,20 +40,20 @@ namespace DIP.App
             var books = await adminService.FindAllAsync();
             foreach (var book in books)
             {
-                presenter.Display(book);
+                _presenter.Display(book);
             }
         }
 
         private static class Composer
         {
-            private readonly static BookStore BookStore = new BookStore();
+            private readonly static BookStore _bookStore = new BookStore();
 
             public static AdminService CreateAdminService()
             {
                 return new AdminService
                 {
-                    _bookReader = BookStore,
-                    _bookWriter = BookStore
+                    _bookReader = _bookStore,
+                    _bookWriter = _bookStore
                 };
             }
 
@@ -63,7 +61,7 @@ namespace DIP.App
             {
                 return new PublicService
                 {
-                    _bookReader = BookStore
+                    _bookReader = _bookStore
                 };
             }
         }
