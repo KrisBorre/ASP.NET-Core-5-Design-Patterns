@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security.Cryptography;
 
 namespace ClearName
 {
@@ -16,7 +15,7 @@ namespace ClearName
             if (_data.Count() > byte.MaxValue)
             {
                 throw new ArgumentOutOfRangeException(
-                    nameof(data), 
+                    nameof(data),
                     $"The number of elements must be lower or equal to '{byte.MaxValue}'."
                 );
             }
@@ -33,11 +32,11 @@ namespace ClearName
 
         private IEnumerable<string> ShuffleData()
         {
-           return _data
-                .Select(value => new { Value = value, Order = _random.NextDouble() })
-                .OrderBy(x => x.Order)
-                .Select(x => x.Value)
-            ;
+            return _data
+                 .Select(value => new { Value = value, Order = _random.NextDouble() })
+                 .OrderBy(x => x.Order)
+                 .Select(x => x.Value)
+             ;
         }
     }
 }

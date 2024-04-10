@@ -1,13 +1,13 @@
 ﻿using System;
 
-namespace SRP
+namespace SingleResponsibilityPrinciple
 {
-    class Program
+    internal class Program
     {
         private static readonly BookStore _bookStore = new BookStore();
         private static readonly BookPresenter _bookPresenter = new BookPresenter();
 
-        static void Main(string[] args)
+        private static void Main(string[] args)
         {
             var run = true;
             do
@@ -66,7 +66,7 @@ namespace SRP
                     Console.WriteLine("The following exception occured, press enter to continue:");
                     Console.WriteLine(ex);
                     Console.ReadLine();
-                }    
+                }
             } while (run);
         }
 
@@ -99,7 +99,7 @@ namespace SRP
             };
             _bookStore.Save(book);
             _bookPresenter.Display(book);
-        } 
+        }
 
         private static void DisplayTheBookSomewhereElse()
         {
