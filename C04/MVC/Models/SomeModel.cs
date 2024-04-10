@@ -1,4 +1,4 @@
-namespace MVC.Models
+namespace ModelViewController.Models
 {
     public class SomeModel
     {

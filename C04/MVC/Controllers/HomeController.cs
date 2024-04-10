@@ -1,10 +1,9 @@
-using MVC.Models;
 using Microsoft.AspNetCore.Mvc;
-using System;
+using ModelViewController.Models;
 using System.IO;
 using System.Threading.Tasks;
 
-namespace MVC.Controllers
+namespace ModelViewController.Controllers
 {
     public class HomeController : Controller
     {
@@ -18,7 +17,7 @@ namespace MVC.Controllers
         public async Task ActionWithoutResultV2Async()
         {
             var filePath = Path.Combine(
-                Directory.GetCurrentDirectory(), 
+                Directory.GetCurrentDirectory(),
                 "wwwroot/images/netcore-logo.png"
             );
             var bytes = System.IO.File.ReadAllBytes(filePath);
