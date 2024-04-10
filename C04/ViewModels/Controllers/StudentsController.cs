@@ -1,10 +1,7 @@
-﻿using ViewModels.Services;
-using Microsoft.AspNetCore.Mvc;
-using System;
-using System.Collections.Generic;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using ViewModels.Services;
 
 namespace ViewModels.Controllers
 {
@@ -12,7 +9,7 @@ namespace ViewModels.Controllers
     {
         private readonly StudentService _studentService = new StudentService();
 
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> IndexAsync()
         {
             // Get data from the data store
             var students = await _studentService.ReadAllAsync();
@@ -38,16 +35,16 @@ namespace ViewModels.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Create(CreateStudentViewModel model)
+        public async Task<IActionResult> CreateAsync(CreateStudentViewModel model)
         {
             // Create the student
             await _studentService.CreateAsync(model.Name);
 
             // Redirect back to the list
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(IndexAsync));
         }
 
-        public async Task<IActionResult> Edit(int id)
+        public async Task<IActionResult> EditAsync(int id)
         {
             var student = await _studentService.ReadOneAsync(id);
             var viewModel = new EditStudentViewModel
@@ -63,13 +60,13 @@ namespace ViewModels.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> Edit(EditStudentViewModel model)
+        public async Task<IActionResult> EditAsync(EditStudentViewModel model)
         {
             // Update the student
             await _studentService.UpdateAsync(model.Id, model.Form.Name);
 
             // Redirect back to the list
-            return RedirectToAction(nameof(Index));
+            return RedirectToAction(nameof(IndexAsync));
         }
     }
 }
