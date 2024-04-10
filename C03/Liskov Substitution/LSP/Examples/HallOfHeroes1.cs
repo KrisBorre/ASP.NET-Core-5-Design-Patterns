@@ -1,9 +1,6 @@
-﻿using LSP.Models;
-using System.Collections.Generic;
-using System.Collections.ObjectModel;
-using System.Linq;
+﻿using LiskovSubstitutionPrinciple.Models;
 
-namespace LSP.Examples.Update1
+namespace LiskovSubstitutionPrinciple.Examples.Update1
 {
     public class HallOfHeroes : HallOfFame
     {

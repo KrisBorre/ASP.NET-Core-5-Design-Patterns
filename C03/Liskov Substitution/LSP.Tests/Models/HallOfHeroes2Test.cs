@@ -1,6 +1,6 @@
 ﻿using Xunit;
 
-namespace LSP.Examples.Update2
+namespace LiskovSubstitutionPrinciple.Examples.Update2
 {
     public class HallOfHeroesTest : BaseLSPTest
     {

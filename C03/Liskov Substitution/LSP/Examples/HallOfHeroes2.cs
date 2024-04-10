@@ -1,7 +1,7 @@
-﻿using LSP.Models;
+﻿using LiskovSubstitutionPrinciple.Models;
 using System;
 
-namespace LSP.Examples.Update2
+namespace LiskovSubstitutionPrinciple.Examples.Update2
 {
     public class HallOfHeroes : HallOfFame
     {

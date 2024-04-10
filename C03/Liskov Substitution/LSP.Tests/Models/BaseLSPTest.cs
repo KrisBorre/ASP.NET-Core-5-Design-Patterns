@@ -1,7 +1,7 @@
-﻿using LSP.Models;
+﻿using LiskovSubstitutionPrinciple.Models;
 using Xunit;
 
-namespace LSP.Examples
+namespace LiskovSubstitutionPrinciple.Examples
 {
     public abstract class BaseLSPTest
     {

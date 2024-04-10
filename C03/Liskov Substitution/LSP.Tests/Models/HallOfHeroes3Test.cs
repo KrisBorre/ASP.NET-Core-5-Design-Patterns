@@ -1,4 +1,4 @@
-﻿namespace LSP.Examples.Update3
+﻿namespace LiskovSubstitutionPrinciple.Examples.Update3
 {
     public class HallOfHeroesTest : BaseLSPTest
     {

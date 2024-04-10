@@ -1,4 +1,4 @@
-﻿namespace LSP.Models
+﻿namespace LiskovSubstitutionPrinciple.Models
 {
     public class Ninja
     {
