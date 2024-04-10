@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ISP
+namespace InterfaceSegregationPrinciple
 {
     public class BookPresenter
     {

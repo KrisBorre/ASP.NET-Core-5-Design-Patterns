@@ -1,4 +1,4 @@
-﻿namespace ISP
+﻿namespace InterfaceSegregationPrinciple
 {
     public class Book
     {
